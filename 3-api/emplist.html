@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const getemp = async() => { // async will make your function as a active function 
+                await fetch("http://localhost:1234/empapi")
+                .then(abc => abc.json())
+                .then(empArray=>{
+                    let data ="";
+                    empArray.map((emp, index)=>{
+                        data = data + `<tr> 
+                                            <td> ${emp.id} </td>
+                                            <td> ${emp.empname} </td>
+                                            <td> ${emp.salary} </td>
+                                            <td> ${emp.dept} </td>
+                                            <td> <a href='editemp.html?id=${emp.id}'> Edit </a> </td>
+                                            <td> <button onclick="deleteemp('${emp.id}')"> Delete </button></td>
+                                        </tr>`
+                    })
+                    //alert(data);
+                    document.getElementById("container").innerHTML = data;
+                })
+
+            }
+
+            const deleteemp = (id) =>{
+                let url = "http://localhost:1234/empapi/"+id;
+                let postdata = {method:"delete"};
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(empinfo=>{
+                    alert(empinfo.fullname + " - Deleted Successfully !");
+                    getemp(); // reload the list after delete
+                })
+            }
+        </script>
+
+        <style>
+            a{margin: 35px; font-size: 20px;}
+        </style>
+    </head>
+    <body onload="getemp()">
+        <p align="center">
+            <a href="userlist.html"> Manage User </a>
+            <a href="newuser.html"> New User </a>
+            <a href="booklist.html"> Manage Book </a>
+            <a href="newbook.html"> New Book </a>
+            <a href="emplist.html"> Manage Employee </a>
+            <a href="newemp.html"> New Employee </a>     
+        </p>
+
+        <h1 align="center"> Mangae Employee List </h1>
+        <table align="center" cellpadding="15" border="1">
+            <thead>
+                <tr>
+                    <th> Emp Id </th>
+                    <th> Emp Name </th>
+                    <th> Salary </th>
+                    <th> Dept </th>
+                    <th> Edit </th>
+                    <th> Delete </th>
+                </tr>
+            </thead>
+            <tbody id="container">
+                <tr>
+                    <td colspan="6" align="center"> No Records.... </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

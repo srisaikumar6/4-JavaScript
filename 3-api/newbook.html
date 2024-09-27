@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const savebook= () => {
+                let bname = document.getElementById("bname").value;
+                let bcost = document.getElementById("bcost").value;
+                let bseller = document.getElementById("bseller").value;
+                let newbook = {bookname:bname, cost:bcost, seller:bseller};
+                let url ="http://localhost:1234/bookapi";
+                let postdata = {
+                    headers: {'Content-Type':'aplication/json'},
+                    method:"post",
+                    body:JSON.stringify(newbook)
+                }
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(bookinfo=>{
+                    alert(bname + "Save Successfully !");
+                    window.location.href="booklist.html";
+                })
+            }
+
+            
+        </script>
+        <style>
+            a{margin: 35px; font-size: 20px;}
+        </style>
+    </head>
+    <body>
+        <p align="center">
+            <a href="userlist.html"> Manage User </a>
+            <a href="newuser.html"> New User </a>
+            <a href="booklist.html"> Manage Book </a>
+            <a href="newbook.html"> New Book </a>
+            <a href="emplist.html"> Manage Employee </a>
+            <a href="newemp.html"> New Employee </a>     
+        </p>
+
+       
+        <table align="center" cellpadding="15">
+            <caption>
+                <h1> Enter Book Details</h1>
+            </caption>
+           
+            <tr>
+                <th> Book Name </th>
+                <td> <input type="text" id="bname"/> </td>
+                
+            </tr>
+            <tr>
+                <th> Cost </th>
+                <td> <input type="number" id="bcost"/> </td>
+            </tr>
+            <tr>
+                <th> Seller </th>
+                <td> <input type="text" id="bseller"/> </td>
+            </tr>
+            <tr>
+                <th colspan="6"> <button onclick="savebook()"> Save user </button> </button></th>
+            </tr>
+        </table>
+        
+    </body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "empapi": [
+    {
+      "id": "1",
+      "empname": "SRI",
+      "salary": "50000",
+      "dept": "INFo"
+    },
+    {
+      "empname": "Sri",
+      "salary": "40000",
+      "dept": "IT",
+      "id": "bcc0"
+    }
+  ],
+  "bookapi": [
+    {
+      "bookname": "HTML",
+      "cost": "1000",
+      "seller": "SRI",
+      "id": "1"
+    },
+    {
+      "bookname": "CSS",
+      "cost": "1000",
+      "seller": "SAI",
+      "id": "2"
+    }
+  ],
+  "userapi": [
+    {
+      "fullname": "Sri",
+      "mobile": "8794561200",
+      "age": "22 years",
+      "city": "Bangalore",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "fullname": "Sri",
+      "mobile": "9794561200",
+      "city": "Mangalore",
+      "age": "21 years"
+    }
+  ]
+}

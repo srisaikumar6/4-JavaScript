@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const saveemp= () => {
+                let ename = document.getElementById("ename").value;
+                let esalary = document.getElementById("esalary").value;
+                let edept = document.getElementById("edept").value;
+                let newemp = {empname:ename, salary:esalary, dept:edept};
+                let url ="http://localhost:1234/empapi";
+                let postdata = {
+                    headers: {'Content-Type':'aplication/json'},
+                    method:"post",
+                    body:JSON.stringify(newemp)
+                }
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(empinfo=>{
+                    alert(ename + " - Save Successfully !");
+                    window.location.href="emplist.html";
+                })
+            }
+
+            
+        </script>
+        <style>
+            a{margin: 35px; font-size: 20px;}
+        </style>
+    </head>
+    <body>
+        <p align="center">
+            <a href="userlist.html"> Manage User </a>
+            <a href="newuser.html"> New User </a>
+            <a href="booklist.html"> Manage Book </a>
+            <a href="newbook.html"> New Book </a>
+            <a href="emplist.html"> Manage Employee </a>
+            <a href="newemp.html"> New Employee </a>     
+        </p>
+
+       
+        <table align="center" cellpadding="15">
+            <caption>
+                <h1> Enter Employee Details</h1>
+            </caption>
+           
+            <tr>
+                <th> Emp Name </th>
+                <td> <input type="text" id="ename"/> </td>
+                
+            </tr>
+            <tr>
+                <th> Salary </th>
+                <td> <input type="number" id="esalary"/> </td>
+            </tr>
+            <tr>
+                <th> Dept </th>
+                <td> <input type="text" id="edept"/> </td>
+            </tr>
+            <tr>
+                <th colspan="6"> <button onclick="saveemp()"> Save Emp </button> </button></th>
+            </tr>
+        </table>
+        
+    </body>
+</html>

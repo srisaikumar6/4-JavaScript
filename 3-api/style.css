@@ -1,0 +1,76 @@
+body{
+    margin: 20px 10% 20px;
+}
+
+header{
+    text-align: center;
+    padding: 10px;
+}
+
+#container{
+    text-align: center;
+}
+
+h1{
+    color: red;
+    font-size: 40px;
+}
+
+.four{
+    width: 20%;
+    display: inline-block;
+    font-size: 30px;
+    color: blue;
+    margin: 50px 2% 50px;
+}
+
+.two{
+    width: 43%;
+    display: inline-block;
+    text-align: left;
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0px 0px 2px grey;
+    vertical-align: top;
+}
+
+.comment{
+    width: 43%;
+    display: inline-block;
+    text-align: left;
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0px 0px 2px grey;
+    vertical-align: top;
+}
+
+.album{
+    width: 43%;
+    display: inline-block;
+    text-align: left;
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0px 0px 2px grey;
+    vertical-align: top;
+}
+
+.todo{
+    width: 43%;
+    display: inline-block;
+    text-align: left;
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0px 0px 2px grey;
+    vertical-align: top;
+}
+
+.user{
+    width: 43%;
+    display: inline-block;
+    text-align: left;
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0px 0px 2px grey;
+    vertical-align: top;
+}
+
